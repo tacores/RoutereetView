@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RoutereetView
 {
     /// <summary>
-    /// GPSの座標を表現するクラス
+    /// GPS座標
     /// </summary>
     public class Coordinate
     {
@@ -34,7 +34,7 @@ namespace RoutereetView
         }
 
         /// <summary>
-        /// 高度
+        /// 標高
         /// </summary>
         public double Altitude
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace RoutereetView
 {
     /// <summary>
-    /// 座標リストクラス
+    /// 座標リスト
     /// </summary>
     public class CoordinateList
     {
@@ -68,7 +68,7 @@ namespace RoutereetView
         }
 
         /// <summary>
-        /// 高度の最大値
+        /// 標高の最大値
         /// </summary>
         public double MaxAltitude
         {
@@ -76,7 +76,7 @@ namespace RoutereetView
         }
 
         /// <summary>
-        /// 高度の最小値
+        /// 標高の最小値
         /// </summary>
         public double MinAltitude
         {
