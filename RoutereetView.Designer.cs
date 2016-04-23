@@ -107,6 +107,7 @@
             this.buttonGoAhead.TabIndex = 7;
             this.buttonGoAhead.Text = "進む";
             this.buttonGoAhead.UseVisualStyleBackColor = true;
+            this.buttonGoAhead.Click += new System.EventHandler(this.buttonGoAhead_Click);
             // 
             // buttonGoBack
             // 
