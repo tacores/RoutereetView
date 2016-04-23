@@ -15,6 +15,7 @@ namespace RoutereetView
     {
         private CoordinateList coordinateList;
         private AltitudeView altitudeView;
+        private double heading;
 
         public RoutereetView()
         {
@@ -44,14 +45,33 @@ namespace RoutereetView
 
         private void pictureBoxAltitude_Click(object sender, EventArgs e)
         {
-            pictureBoxStreetView.Image = null;
-
             Point pt = pictureBoxAltitude.PointToClient(new Point(MousePosition.X, MousePosition.Y));
             altitudeView.OnClick(pt);
             int currentIndex = altitudeView.GetCurrentIndex();
             Tuple<Coordinate, Coordinate> tpl = coordinateList.GetTupleAtIndex(currentIndex);
-            double heading = GpsCalculator.Heading(tpl.Item1, tpl.Item2);
 
+            heading = GpsCalculator.Heading(tpl.Item1, tpl.Item2);
+
+            StreetViewAPI api = new StreetViewAPI(new HttpImpl());
+            Bitmap bitmap = api.GetImage(tpl.Item1, heading);
+            pictureBoxStreetView.Image = bitmap;
+        }
+
+        private void buttonTrunRight_Click(object sender, EventArgs e)
+        {
+            TurnStreetView(45);
+        }
+
+        private void buttonTurnLeft_Click(object sender, EventArgs e)
+        {
+            TurnStreetView(360 - 45);
+        }
+
+        private void TurnStreetView(double angle)
+        {
+            int currentIndex = altitudeView.GetCurrentIndex();
+            Tuple<Coordinate, Coordinate> tpl = coordinateList.GetTupleAtIndex(currentIndex);
+            heading = (heading + angle) % 360;
             StreetViewAPI api = new StreetViewAPI(new HttpImpl());
             Bitmap bitmap = api.GetImage(tpl.Item1, heading);
             pictureBoxStreetView.Image = bitmap;

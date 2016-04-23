@@ -44,12 +44,12 @@ namespace Test
             enumerator.MoveNext();
             Coordinate coordinate2 = (Coordinate)enumerator.Current;
 
-            Assert.AreEqual(134.1754575, coordinate1.Latitude);
-            Assert.AreEqual(34.48808388888889, coordinate1.Longitude);
+            Assert.AreEqual(134.1754575, coordinate1.Longitude);
+            Assert.AreEqual(34.48808388888889, coordinate1.Latitude);
             Assert.AreEqual(2, coordinate1.Altitude);
 
-            Assert.AreEqual(134.182555, coordinate2.Latitude);
-            Assert.AreEqual(34.484685, coordinate2.Longitude);
+            Assert.AreEqual(134.182555, coordinate2.Longitude);
+            Assert.AreEqual(34.484685, coordinate2.Latitude);
             Assert.AreEqual(4, coordinate2.Altitude);
         }
 
@@ -76,12 +76,12 @@ namespace Test
             enumerator.MoveNext();
             Coordinate coordinate2 = (Coordinate)enumerator.Current;
 
-            Assert.AreEqual(134.1754575, coordinate1.Latitude);
-            Assert.AreEqual(34.48808388888889, coordinate1.Longitude);
+            Assert.AreEqual(134.1754575, coordinate1.Longitude);
+            Assert.AreEqual(34.48808388888889, coordinate1.Latitude);
             Assert.AreEqual(2, coordinate1.Altitude);
 
-            Assert.AreEqual(134.182555, coordinate2.Latitude);
-            Assert.AreEqual(34.484685, coordinate2.Longitude);
+            Assert.AreEqual(134.182555, coordinate2.Longitude);
+            Assert.AreEqual(34.484685, coordinate2.Latitude);
             Assert.AreEqual(4, coordinate2.Altitude);
         }
 
@@ -101,8 +101,8 @@ namespace Test
             enumerator.MoveNext();
             Coordinate coordinate1 = (Coordinate)enumerator.Current;
 
-            Assert.AreEqual(134.1754575, coordinate1.Latitude);
-            Assert.AreEqual(34.48808388888889, coordinate1.Longitude);
+            Assert.AreEqual(134.1754575, coordinate1.Longitude);
+            Assert.AreEqual(34.48808388888889, coordinate1.Latitude);
             Assert.AreEqual(2, coordinate1.Altitude);
         }
     }

@@ -28,10 +28,10 @@ namespace RoutereetView
         /// <returns></returns>
         public Bitmap GetImage(Coordinate coordinate, double heading)
         {
-            string url = "https://maps.googleapis.com/maps/api/streetview?size=300x300";
-            url += "&location=" + coordinate.Longitude.ToString() + "," + coordinate.Latitude.ToString();
+            string url = "https://maps.googleapis.com/maps/api/streetview?size=420x280";
+            url += "&location=" + coordinate.Latitude.ToString() + "," + coordinate.Longitude.ToString();
             url += "&heading=" + heading.ToString();
-            url += "&key=" + "keykey";
+            url += "&key=" + APIKey.key;
 
             byte[] data = http.Download(url);
             Bitmap bitmap = null;

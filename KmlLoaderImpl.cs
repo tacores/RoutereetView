@@ -38,8 +38,8 @@ namespace RoutereetView
             {
                 Coordinate coordinate = new Coordinate();
                 string[] colms = line.Split(new string[] { "," }, StringSplitOptions.None);
-                coordinate.Latitude = Double.Parse(colms[0]);
-                coordinate.Longitude = Double.Parse(colms[1]);
+                coordinate.Longitude = Double.Parse(colms[0]);
+                coordinate.Latitude = Double.Parse(colms[1]);
                 coordinate.Altitude = Int32.Parse(colms[2]);
 
                 list.Add(coordinate);
