@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBoxStreetView = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBoxAltitude = new System.Windows.Forms.PictureBox();
             this.buttonOpenKml = new System.Windows.Forms.Button();
             this.labelMaxAltitude = new System.Windows.Forms.Label();
@@ -38,8 +37,10 @@
             this.buttonGoBack = new System.Windows.Forms.Button();
             this.buttonTurnLeft = new System.Windows.Forms.Button();
             this.buttonTrunRight = new System.Windows.Forms.Button();
+            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStreetView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAltitude)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxStreetView
@@ -52,28 +53,19 @@
             this.pictureBoxStreetView.TabIndex = 0;
             this.pictureBoxStreetView.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1102, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "開く";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // pictureBoxAltitude
             // 
             this.pictureBoxAltitude.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBoxAltitude.Location = new System.Drawing.Point(84, 503);
+            this.pictureBoxAltitude.Location = new System.Drawing.Point(664, 518);
             this.pictureBoxAltitude.Name = "pictureBoxAltitude";
-            this.pictureBoxAltitude.Size = new System.Drawing.Size(522, 129);
+            this.pictureBoxAltitude.Size = new System.Drawing.Size(487, 172);
             this.pictureBoxAltitude.TabIndex = 3;
             this.pictureBoxAltitude.TabStop = false;
             this.pictureBoxAltitude.Click += new System.EventHandler(this.pictureBoxAltitude_Click);
             // 
             // buttonOpenKml
             // 
-            this.buttonOpenKml.Location = new System.Drawing.Point(780, 12);
+            this.buttonOpenKml.Location = new System.Drawing.Point(1221, 12);
             this.buttonOpenKml.Name = "buttonOpenKml";
             this.buttonOpenKml.Size = new System.Drawing.Size(113, 41);
             this.buttonOpenKml.TabIndex = 4;
@@ -84,7 +76,7 @@
             // labelMaxAltitude
             // 
             this.labelMaxAltitude.AutoSize = true;
-            this.labelMaxAltitude.Location = new System.Drawing.Point(12, 503);
+            this.labelMaxAltitude.Location = new System.Drawing.Point(1218, 518);
             this.labelMaxAltitude.Name = "labelMaxAltitude";
             this.labelMaxAltitude.Size = new System.Drawing.Size(0, 18);
             this.labelMaxAltitude.TabIndex = 5;
@@ -93,7 +85,7 @@
             // labelMinAltitude
             // 
             this.labelMinAltitude.AutoSize = true;
-            this.labelMinAltitude.Location = new System.Drawing.Point(12, 614);
+            this.labelMinAltitude.Location = new System.Drawing.Point(1218, 672);
             this.labelMinAltitude.Name = "labelMinAltitude";
             this.labelMinAltitude.Size = new System.Drawing.Size(0, 18);
             this.labelMinAltitude.TabIndex = 6;
@@ -101,7 +93,7 @@
             // 
             // buttonGoAhead
             // 
-            this.buttonGoAhead.Location = new System.Drawing.Point(626, 512);
+            this.buttonGoAhead.Location = new System.Drawing.Point(245, 478);
             this.buttonGoAhead.Name = "buttonGoAhead";
             this.buttonGoAhead.Size = new System.Drawing.Size(103, 43);
             this.buttonGoAhead.TabIndex = 7;
@@ -111,7 +103,7 @@
             // 
             // buttonGoBack
             // 
-            this.buttonGoBack.Location = new System.Drawing.Point(626, 578);
+            this.buttonGoBack.Location = new System.Drawing.Point(245, 614);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(103, 43);
             this.buttonGoBack.TabIndex = 8;
@@ -120,7 +112,7 @@
             // 
             // buttonTurnLeft
             // 
-            this.buttonTurnLeft.Location = new System.Drawing.Point(186, 438);
+            this.buttonTurnLeft.Location = new System.Drawing.Point(75, 539);
             this.buttonTurnLeft.Name = "buttonTurnLeft";
             this.buttonTurnLeft.Size = new System.Drawing.Size(103, 43);
             this.buttonTurnLeft.TabIndex = 9;
@@ -130,7 +122,7 @@
             // 
             // buttonTrunRight
             // 
-            this.buttonTrunRight.Location = new System.Drawing.Point(358, 438);
+            this.buttonTrunRight.Location = new System.Drawing.Point(402, 539);
             this.buttonTrunRight.Name = "buttonTrunRight";
             this.buttonTrunRight.Size = new System.Drawing.Size(103, 43);
             this.buttonTrunRight.TabIndex = 10;
@@ -138,11 +130,21 @@
             this.buttonTrunRight.UseVisualStyleBackColor = true;
             this.buttonTrunRight.Click += new System.EventHandler(this.buttonTrunRight_Click);
             // 
+            // pictureBoxMap
+            // 
+            this.pictureBoxMap.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBoxMap.Location = new System.Drawing.Point(664, 12);
+            this.pictureBoxMap.Name = "pictureBoxMap";
+            this.pictureBoxMap.Size = new System.Drawing.Size(487, 487);
+            this.pictureBoxMap.TabIndex = 11;
+            this.pictureBoxMap.TabStop = false;
+            // 
             // RoutereetView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 644);
+            this.ClientSize = new System.Drawing.Size(1343, 723);
+            this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.buttonTrunRight);
             this.Controls.Add(this.buttonTurnLeft);
             this.Controls.Add(this.buttonGoBack);
@@ -151,12 +153,12 @@
             this.Controls.Add(this.labelMaxAltitude);
             this.Controls.Add(this.buttonOpenKml);
             this.Controls.Add(this.pictureBoxAltitude);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxStreetView);
             this.Name = "RoutereetView";
             this.Text = "RoutereetView";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStreetView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAltitude)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,7 +167,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxStreetView;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBoxAltitude;
         private System.Windows.Forms.Button buttonOpenKml;
         private System.Windows.Forms.Label labelMaxAltitude;
@@ -174,6 +175,7 @@
         private System.Windows.Forms.Button buttonGoBack;
         private System.Windows.Forms.Button buttonTurnLeft;
         private System.Windows.Forms.Button buttonTrunRight;
+        private System.Windows.Forms.PictureBox pictureBoxMap;
     }
 }
 

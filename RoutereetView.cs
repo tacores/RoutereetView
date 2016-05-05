@@ -15,6 +15,7 @@ namespace RoutereetView
     {
         private CoordinateList coordinateList;
         private AltitudeView altitudeView;
+        private MapView mapView;
         private int currentIndex;
         private double heading;
 
@@ -22,6 +23,7 @@ namespace RoutereetView
         {
             InitializeComponent();
             altitudeView = new AltitudeView(pictureBoxAltitude);
+            mapView = new MapView(pictureBoxMap);
         }
 
         private void buttonOpenKml_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace RoutereetView
                 string fileContent = File.ReadAllText(ofd.FileName);
                 LoadKml(fileContent);
                 altitudeView.DrawAltitude(coordinateList);
+                mapView.DrawMap(coordinateList);
             }
         }
 

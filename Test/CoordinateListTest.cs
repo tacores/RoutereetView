@@ -46,6 +46,62 @@ namespace Test
         }
 
         [TestMethod]
+        public void TestMaxLongitude()
+        {
+            Coordinate coordinate1 = new Coordinate();
+            coordinate1.Longitude = 1000;
+            Coordinate coordinate2 = new Coordinate();
+            coordinate2.Longitude = 999;
+
+            sut.Add(coordinate1);
+            sut.Add(coordinate2);
+
+            Assert.AreEqual(1000, sut.MaxLongitude);
+        }
+
+        [TestMethod]
+        public void TestMinLongitude()
+        {
+            Coordinate coordinate1 = new Coordinate();
+            coordinate1.Longitude = 1000;
+            Coordinate coordinate2 = new Coordinate();
+            coordinate2.Longitude = -999;
+
+            sut.Add(coordinate1);
+            sut.Add(coordinate2);
+
+            Assert.AreEqual(-999, sut.MinLongitude);
+        }
+
+        [TestMethod]
+        public void TestMaxLatitude()
+        {
+            Coordinate coordinate1 = new Coordinate();
+            coordinate1.Latitude = 1000;
+            Coordinate coordinate2 = new Coordinate();
+            coordinate2.Latitude = 999;
+
+            sut.Add(coordinate1);
+            sut.Add(coordinate2);
+
+            Assert.AreEqual(1000, sut.MaxLatitude);
+        }
+
+        [TestMethod]
+        public void TestMinLatitude()
+        {
+            Coordinate coordinate1 = new Coordinate();
+            coordinate1.Latitude = 1000;
+            Coordinate coordinate2 = new Coordinate();
+            coordinate2.Latitude = -999;
+
+            sut.Add(coordinate1);
+            sut.Add(coordinate2);
+
+            Assert.AreEqual(-999, sut.MinLatitude);
+        }
+
+        [TestMethod]
         public void TestMaxAltitude()
         {
             Coordinate coordinate1 = new Coordinate();

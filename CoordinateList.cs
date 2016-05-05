@@ -12,6 +12,10 @@ namespace RoutereetView
     public class CoordinateList
     {
         private LinkedList<Coordinate> list;
+        private double maxLongitude;
+        private double minLongitude;
+        private double maxLatitude;
+        private double minLatitude;
         private double maxAltitude;
         private double minAltitude;
 
@@ -21,8 +25,8 @@ namespace RoutereetView
         public CoordinateList()
         {
             list = new LinkedList<Coordinate>();
-            maxAltitude = -100000;
-            minAltitude = 100000;
+            maxLongitude = maxLatitude = maxAltitude = -100000;
+            minLongitude = minLatitude = minAltitude = 100000;
         }
 
         /// <summary>
@@ -32,6 +36,12 @@ namespace RoutereetView
         public void Add(Coordinate coordinate)
         {
             list.AddLast(coordinate);
+            maxLongitude = Math.Max(maxLongitude, coordinate.Longitude);
+            minLongitude = Math.Min(minLongitude, coordinate.Longitude);
+
+            maxLatitude = Math.Max(maxLatitude, coordinate.Latitude);
+            minLatitude = Math.Min(minLatitude, coordinate.Latitude);
+
             maxAltitude = Math.Max(maxAltitude, coordinate.Altitude);
             minAltitude = Math.Min(minAltitude, coordinate.Altitude);
         }
@@ -42,7 +52,7 @@ namespace RoutereetView
         /// <returns>イテレータ</returns>
         public System.Collections.IEnumerable Iter()
         {
-            foreach(Coordinate coordinate in list)
+            foreach (Coordinate coordinate in list)
             {
                 yield return coordinate;
             }
@@ -65,6 +75,38 @@ namespace RoutereetView
         public int Count
         {
             get { return list.Count; }
+        }
+
+        /// <summary>
+        /// 緯度の最大値
+        /// </summary>
+        public double MaxLongitude
+        {
+            get { return maxLongitude; }
+        }
+
+        /// <summary>
+        /// 緯度の最小値
+        /// </summary>
+        public double MinLongitude
+        {
+            get { return minLongitude; }
+        }
+
+        /// <summary>
+        /// 経度の最大値
+        /// </summary>
+        public double MaxLatitude
+        {
+            get { return maxLatitude; }
+        }
+
+        /// <summary>
+        /// 経度の最小値
+        /// </summary>
+        public double MinLatitude
+        {
+            get { return minLatitude; }
         }
 
         /// <summary>

@@ -55,6 +55,7 @@
     <Compile Include="HttpImpl.cs" />
     <Compile Include="KmlLoader.cs" />
     <Compile Include="KmlLoaderImpl.cs" />
+    <Compile Include="MapView.cs" />
     <Compile Include="RoutereetView.cs">
       <SubType>Form</SubType>
     </Compile>
