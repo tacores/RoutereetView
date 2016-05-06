@@ -161,5 +161,39 @@ namespace Test
             }
             Assert.Fail();
         }
+
+        [TestMethod]
+        public void TestGetNearest1()
+        {
+            Coordinate coordinate1 = new Coordinate();
+            coordinate1.Longitude = -10;
+            coordinate1.Latitude = -10;
+            Coordinate coordinate2 = new Coordinate();
+            coordinate2.Longitude = 10;
+            coordinate2.Latitude = 10;
+
+            sut.Add(coordinate1);
+            sut.Add(coordinate2);
+
+            int index = sut.GetNearestIndex(-1, -1);
+            Assert.AreEqual(0, index);
+        }
+
+        [TestMethod]
+        public void TestGetNearest2()
+        {
+            Coordinate coordinate1 = new Coordinate();
+            coordinate1.Longitude = -10;
+            coordinate1.Latitude = -10;
+            Coordinate coordinate2 = new Coordinate();
+            coordinate2.Longitude = 10;
+            coordinate2.Latitude = 10;
+
+            sut.Add(coordinate1);
+            sut.Add(coordinate2);
+
+            int index = sut.GetNearestIndex(1, 1);
+            Assert.AreEqual(1, index);
+        }
     }
 }

@@ -19,7 +19,6 @@ namespace RoutereetView
         private int minAltitude;
         double xMagnification;
         double yMagnification;
-        int currentIndex;
 
         public AltitudeView(PictureBox pictureBoxAltitude)
         {
@@ -30,7 +29,6 @@ namespace RoutereetView
 
         public void DrawAltitude(CoordinateList coordinateList)
         {
-            currentIndex = 0;
             this.coordinateList = coordinateList;
             maxAltitude = (int)coordinateList.MaxAltitude;
             minAltitude = (int)coordinateList.MinAltitude;
@@ -72,7 +70,7 @@ namespace RoutereetView
             return new Point(xResult, yResult);
         }
 
-        public void OnClick(Point pt)
+        public int OnClickAndReturnIndex(Point pt)
         {
             Bitmap newCanvas = new Bitmap(baseCanvas);
             using (Graphics g = Graphics.FromImage(newCanvas))
@@ -80,12 +78,19 @@ namespace RoutereetView
                 g.DrawLine(Pens.Red, new Point(pt.X, 0), new Point(pt.X, picHeight - 1));
             }
             pictureBoxAltitude.Image = newCanvas;
-            currentIndex = (int)((double)pt.X / xMagnification);
+            int index = (int)((double)pt.X / xMagnification);
+            return index;
         }
 
-        public int GetCurrentIndex()
+        public void DrawLine(int index)
         {
-            return currentIndex;
+            Bitmap newCanvas = new Bitmap(baseCanvas);
+            using (Graphics g = Graphics.FromImage(newCanvas))
+            {
+                int x = (int)(xMagnification * index);
+                g.DrawLine(Pens.Red, new Point(x, 0), new Point(x, picHeight - 1));
+            }
+            pictureBoxAltitude.Image = newCanvas;
         }
     }
 }

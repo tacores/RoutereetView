@@ -20,6 +20,8 @@ namespace RoutereetView
         private double maxLatitude;
         private double minLatitude;
 
+        private int PointSize = 10;
+
         double xMagnification;
         double yMagnification;
         int currentIndex;
@@ -40,8 +42,8 @@ namespace RoutereetView
             maxLatitude = coordinateList.MaxLatitude;
             minLatitude = coordinateList.MinLatitude;
 
-            xMagnification = (double)picWidth / (maxLatitude - minLatitude);
-            yMagnification = (double)picHeight / (maxLongitude - minLongitude);
+            xMagnification = (double)picWidth / (maxLongitude - minLongitude);
+            yMagnification = (double)picHeight / (maxLatitude - minLatitude);
 
             Bitmap newCanvas = new Bitmap(picWidth, picHeight);
             using (Graphics g = Graphics.FromImage(newCanvas))
@@ -73,11 +75,39 @@ namespace RoutereetView
 
         private Point ConvertCoordinateToPixelPoint(Coordinate coordinate)
         {
-            int x = (int)(xMagnification * (coordinate.Latitude - minLatitude));
-            int y = (int)(yMagnification * (coordinate.Longitude - minLongitude)) - 1;
-            int xResult = y;
-            int yResult = picHeight - x;
+            int xResult = (int)(xMagnification * (coordinate.Longitude - minLongitude));
+            int yResult = picHeight - (int)(yMagnification * (coordinate.Latitude - minLatitude)) - 1;
             return new Point(xResult, yResult);
+        }
+
+        private Coordinate ConvertPixelPointToCoordinate(Point pt)
+        {
+            Coordinate coordinate = new Coordinate();
+            coordinate.Longitude = pt.X / xMagnification + minLongitude;
+            coordinate.Latitude = (picHeight - pt.Y - 1) / yMagnification + minLatitude;
+            return coordinate;
+        }
+
+        public void DrawCurrentPoint(int index)
+        {
+            Tuple<Coordinate, Coordinate> tpl = coordinateList.GetTupleAtIndex(index);
+
+            Bitmap newCanvas = new Bitmap(baseCanvas);
+            using (Graphics g = Graphics.FromImage(newCanvas))
+            {
+                Point pt = ConvertCoordinateToPixelPoint(tpl.Item1);
+                g.FillEllipse(Brushes.Red, pt.X - PointSize / 2, pt.Y - PointSize / 2, PointSize, PointSize);
+            }
+            pictureBoxMap.Image = newCanvas;
+        }
+
+        public int OnClickAndReturnIndex(Point pt)
+        {
+            Bitmap newCanvas = new Bitmap(baseCanvas);
+            Coordinate coordinate = ConvertPixelPointToCoordinate(pt);
+            int index = coordinateList.GetNearestIndex(coordinate.Longitude, coordinate.Latitude);
+            DrawCurrentPoint(index);
+            return index;
         }
     }
 }

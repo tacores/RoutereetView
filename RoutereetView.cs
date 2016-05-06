@@ -55,13 +55,13 @@ namespace RoutereetView
         private void pictureBoxAltitude_Click(object sender, EventArgs e)
         {
             Point pt = pictureBoxAltitude.PointToClient(new Point(MousePosition.X, MousePosition.Y));
-            altitudeView.OnClick(pt);
-            currentIndex = altitudeView.GetCurrentIndex();
+            currentIndex = altitudeView.OnClickAndReturnIndex(pt);
 
             Tuple<Coordinate, Coordinate> tpl = coordinateList.GetTupleAtIndex(currentIndex);
             heading = GpsCalculator.Heading(tpl.Item1, tpl.Item2);
             DrawStreetViewAtIndex(tpl.Item1);
 
+            mapView.DrawCurrentPoint(currentIndex);
         }
 
         private void DrawStreetViewAtIndex(Coordinate coordinate)
@@ -94,6 +94,17 @@ namespace RoutereetView
             Tuple<Coordinate, Coordinate> tpl = coordinateList.GetTupleAtIndex(currentIndex + 1);
             heading = GpsCalculator.Heading(tpl.Item1, tpl.Item2);
             DrawStreetViewAtIndex(tpl.Item1);
+        }
+
+        private void pictureBoxMap_MouseClick(object sender, MouseEventArgs e)
+        {
+            Point pt = pictureBoxAltitude.PointToClient(new Point(MousePosition.X, MousePosition.Y));
+            currentIndex = mapView.OnClickAndReturnIndex(pt);
+
+            Tuple<Coordinate, Coordinate> tpl = coordinateList.GetTupleAtIndex(currentIndex);
+            heading = GpsCalculator.Heading(tpl.Item1, tpl.Item2);
+            DrawStreetViewAtIndex(tpl.Item1);
+            altitudeView.DrawLine(currentIndex);
         }
     }
 }

@@ -70,6 +70,31 @@ namespace RoutereetView
         }
 
         /// <summary>
+        /// 最も近い座標のインデックスを返す
+        /// </summary>
+        /// <param name="longitude">緯度</param>
+        /// <param name="latitude">経度</param>
+        /// <returns>インデックス</returns>
+        public int GetNearestIndex(double longitude, double latitude)
+        {
+            int result = 0;
+            double minLength = 10000000;
+            int index = 0;
+            foreach (Coordinate coordinate in list)
+            {
+                double length = (coordinate.Longitude - longitude) * (coordinate.Longitude - longitude)
+                    + (coordinate.Latitude - latitude) * (coordinate.Latitude - latitude);
+                if (length < minLength)
+                {
+                    minLength = length;
+                    result = index;
+                }
+                index++;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// リストの要素数
         /// </summary>
         public int Count

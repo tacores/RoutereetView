@@ -138,6 +138,7 @@
             this.pictureBoxMap.Size = new System.Drawing.Size(487, 487);
             this.pictureBoxMap.TabIndex = 11;
             this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxMap_MouseClick);
             // 
             // RoutereetView
             // 
