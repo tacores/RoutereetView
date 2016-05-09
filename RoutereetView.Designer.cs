@@ -65,7 +65,7 @@
             // 
             // buttonOpenKml
             // 
-            this.buttonOpenKml.Location = new System.Drawing.Point(1221, 12);
+            this.buttonOpenKml.Location = new System.Drawing.Point(1172, 12);
             this.buttonOpenKml.Name = "buttonOpenKml";
             this.buttonOpenKml.Size = new System.Drawing.Size(113, 41);
             this.buttonOpenKml.TabIndex = 4;
@@ -76,20 +76,20 @@
             // labelMaxAltitude
             // 
             this.labelMaxAltitude.AutoSize = true;
-            this.labelMaxAltitude.Location = new System.Drawing.Point(1218, 518);
+            this.labelMaxAltitude.Location = new System.Drawing.Point(1169, 518);
             this.labelMaxAltitude.Name = "labelMaxAltitude";
             this.labelMaxAltitude.Size = new System.Drawing.Size(0, 18);
             this.labelMaxAltitude.TabIndex = 5;
-            this.labelMaxAltitude.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelMaxAltitude.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelMinAltitude
             // 
             this.labelMinAltitude.AutoSize = true;
-            this.labelMinAltitude.Location = new System.Drawing.Point(1218, 672);
+            this.labelMinAltitude.Location = new System.Drawing.Point(1169, 672);
             this.labelMinAltitude.Name = "labelMinAltitude";
             this.labelMinAltitude.Size = new System.Drawing.Size(0, 18);
             this.labelMinAltitude.TabIndex = 6;
-            this.labelMinAltitude.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.labelMinAltitude.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonGoAhead
             // 
@@ -109,6 +109,7 @@
             this.buttonGoBack.TabIndex = 8;
             this.buttonGoBack.Text = "戻る";
             this.buttonGoBack.UseVisualStyleBackColor = true;
+            this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
             // 
             // buttonTurnLeft
             // 
@@ -144,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 723);
+            this.ClientSize = new System.Drawing.Size(1302, 723);
             this.Controls.Add(this.pictureBoxMap);
             this.Controls.Add(this.buttonTrunRight);
             this.Controls.Add(this.buttonTurnLeft);
