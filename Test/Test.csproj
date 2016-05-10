@@ -59,7 +59,7 @@
     <Compile Include="CoordinateListTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RoutereetView.csproj">
+    <ProjectReference Include="..\RoutereetView\RoutereetView.csproj">
       <Project>{7b7999cf-ca31-45f7-9849-ed41aea7a0f3}</Project>
       <Name>RoutereetView</Name>
     </ProjectReference>
