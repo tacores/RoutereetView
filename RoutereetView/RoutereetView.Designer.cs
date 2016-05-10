@@ -93,6 +93,7 @@
             // 
             // buttonGoAhead
             // 
+            this.buttonGoAhead.Enabled = false;
             this.buttonGoAhead.Location = new System.Drawing.Point(245, 478);
             this.buttonGoAhead.Name = "buttonGoAhead";
             this.buttonGoAhead.Size = new System.Drawing.Size(103, 43);
@@ -103,6 +104,7 @@
             // 
             // buttonGoBack
             // 
+            this.buttonGoBack.Enabled = false;
             this.buttonGoBack.Location = new System.Drawing.Point(245, 614);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(103, 43);
@@ -113,6 +115,7 @@
             // 
             // buttonTurnLeft
             // 
+            this.buttonTurnLeft.Enabled = false;
             this.buttonTurnLeft.Location = new System.Drawing.Point(75, 539);
             this.buttonTurnLeft.Name = "buttonTurnLeft";
             this.buttonTurnLeft.Size = new System.Drawing.Size(103, 43);
@@ -123,6 +126,7 @@
             // 
             // buttonTrunRight
             // 
+            this.buttonTrunRight.Enabled = false;
             this.buttonTrunRight.Location = new System.Drawing.Point(402, 539);
             this.buttonTrunRight.Name = "buttonTrunRight";
             this.buttonTrunRight.Size = new System.Drawing.Size(103, 43);

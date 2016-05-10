@@ -45,9 +45,18 @@ namespace RoutereetView
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string fileContent = File.ReadAllText(ofd.FileName);
-                LoadKml(fileContent);
+                try
+                {
+                    LoadKml(fileContent);
+                }
+                catch(System.Xml.XmlException ex)
+                {
+                    MessageBox.Show("不正なXMLファイルです。" + ex.ToString());
+                    return;
+                }
                 altitudeView.DrawAltitude(coordinateList);
                 mapView.DrawMap(coordinateList);
+                EnableButtons();
             }
         }
 
@@ -64,6 +73,14 @@ namespace RoutereetView
             labelMinAltitude.Text = coordinateList.MinAltitude.ToString();
         }
 
+        private void EnableButtons()
+        {
+            buttonGoAhead.Enabled = true;
+            buttonGoBack.Enabled = true;
+            buttonTrunRight.Enabled = true;
+            buttonTurnLeft.Enabled = true;
+        }
+
         /// <summary>
         /// 高度ビュークリック
         /// </summary>
@@ -71,6 +88,8 @@ namespace RoutereetView
         /// <param name="e"></param>
         private void pictureBoxAltitude_Click(object sender, EventArgs e)
         {
+            if (coordinateList == null) return;
+
             Point pt = pictureBoxAltitude.PointToClient(new Point(MousePosition.X, MousePosition.Y));
             currentIndex = altitudeView.OnClickAndReturnIndex(pt);
 
@@ -88,6 +107,8 @@ namespace RoutereetView
         /// <param name="e"></param>
         private void pictureBoxMap_MouseClick(object sender, MouseEventArgs e)
         {
+            if (coordinateList == null) return;
+
             Point pt = new Point(e.X, e.Y);
             currentIndex = mapView.OnClickAndReturnIndex(pt);
 
