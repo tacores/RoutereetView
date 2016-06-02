@@ -1,7 +1,8 @@
 RoutereetView
 =======
-KMLƒtƒ@ƒCƒ‹‚ð“Ç‚Ýž‚ñ‚ÅAƒTƒNƒb‚ÆGoogleƒXƒgƒŠ[ƒgƒrƒ…[‚ð•\Ž¦‚µA“¹˜H‚ðŠm”F‚·‚é‚½‚ß‚ÌƒAƒvƒŠ‚Å‚·B
-ƒTƒCƒNƒŠƒ“ƒOƒR[ƒX‚ÌŽ–‘OŠm”F‚Ì‚½‚ß‚ÉŠJ”­‚µ‚Ü‚µ‚½B
+KMLƒtƒ@ƒCƒ‹‚ð“Ç‚Ýž‚ñ‚ÅAƒTƒNƒb‚ÆGoogleƒXƒgƒŠ[ƒgƒrƒ…[‚ð•\Ž¦‚µA“¹˜H‚ðŠm”F‚·‚é‚½‚ß‚ÌƒAƒvƒŠ‚Å‚·B  
+ƒTƒCƒNƒŠƒ“ƒOƒR[ƒX‚ÌŽ–‘OŠm”F‚Ì‚½‚ß‚ÉŠJ”­‚µ‚Ü‚µ‚½B  
+MITƒ‰ƒCƒZƒ“ƒXB
 
 ![‰æ–ÊƒLƒƒƒvƒ`ƒƒ](https://raw.githubusercontent.com/tacores/RoutereetView/master/images/capture.png)
 
@@ -19,7 +20,7 @@ KMLƒtƒ@ƒCƒ‹‚ð“Ç‚Ýž‚ñ‚ÅAƒTƒNƒb‚ÆGoogleƒXƒgƒŠ[ƒgƒrƒ…[‚ð•\Ž¦‚µA“¹˜H‚ðŠm”F‚·‚é‚
 2. “ú–{‘“à‚ÌGPSƒf[ƒ^‚Å‚µ‚©ƒeƒXƒg‚µ‚Ä‚¢‚Ü‚¹‚ñB“ì”¼‹…“™‚Ìƒf[ƒ^‚Í³í‚É•\Ž¦‚³‚ê‚È‚¢‚©‚à‚µ‚ê‚Ü‚¹‚ñB
 
 
-# ŠJ”­ŽÒŒü‚¯”õl
+# ŠJ”­ŽÒŒü‚¯î•ñ
 1. ŠJ”­ŠÂ‹«‚ÍVisualStudio2015B
 2. Google APIƒL[iAPIKey.csj‚Ì’†g‚Íƒ_ƒ~[‚Å‚·Bƒrƒ‹ƒh‚·‚éê‡‚ÍŠeŽ©Žæ“¾AÝ’è‚µ‚Ä‚­‚¾‚³‚¢B
 
