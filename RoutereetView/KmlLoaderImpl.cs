@@ -33,14 +33,15 @@ namespace RoutereetView
 
         private void SetCoordinates(CoordinateList list, string coordinates)
         {
-            string[] lines = coordinates.Split(new string[] { "\n" }, StringSplitOptions.None);
+            string[] lines = coordinates.Split(new string[] { " ", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+
             foreach (string line in lines)
             {
                 Coordinate coordinate = new Coordinate();
                 string[] colms = line.Split(new string[] { "," }, StringSplitOptions.None);
                 coordinate.Longitude = Double.Parse(colms[0]);
                 coordinate.Latitude = Double.Parse(colms[1]);
-                coordinate.Altitude = Int32.Parse(colms[2]);
+                coordinate.Altitude = Double.Parse(colms[2]);
 
                 list.Add(coordinate);
             }
